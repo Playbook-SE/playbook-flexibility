@@ -1082,7 +1082,7 @@ function initAgent(p) {
 
 // ⚠️ Set this to your deployed Vercel endpoint, e.g.
 //    https://flexready-personas.vercel.app/api/chat
-const PERSONA_BACKEND_URL = 'https://YOUR-PROJECT.vercel.app/api/chat';
+const PERSONA_BACKEND_URL = 'https://flexready-persona-api.vercel.app/api/chat';
 
 async function callClaude(p, msg, isIntro) {
   if (!isIntro) agentHistory[p.id].push({ role: 'user', content: msg });
