@@ -1,0 +1,90 @@
+/* ============================================================
+   Schneider Electric — Color tokens
+   Anchor: "Life Green" #3DCD58 (verified brand green).
+   Neutral + semantic scales are DERIVED/harmonized to fit the
+   brand (flagged in readme). Replace with official values if
+   you have the SE digital design-system palette.
+   ============================================================ */
+:root {
+  /* --- Brand greens (Life Is On) --- */
+  --se-green-50:  #ecfbf0;
+  --se-green-100: #d2f4dc;
+  --se-green-200: #a6e9bb;
+  --se-green-300: #74dc92;
+  --se-green-400: #54d473;
+  --se-green-500: #3dcd58; /* Life Green — primary brand */
+  --se-green-600: #2fb847;
+  --se-green-700: #1f9e37; /* accessible green for text on light */
+  --se-green-800: #167a2c;
+  --se-green-900: #0f5a20;
+
+  /* Deep logo / heritage green */
+  --se-green-deep: #009530;
+
+  /* --- Neutrals (cool gray, near-black text) --- */
+  --se-gray-0:   #ffffff;
+  --se-gray-50:  #f7f8f8;
+  --se-gray-100: #edeff0;
+  --se-gray-150: #e4e7e9;
+  --se-gray-200: #dde1e3;
+  --se-gray-300: #c4cace;
+  --se-gray-400: #9aa2a8;
+  --se-gray-500: #6e767c;
+  --se-gray-600: #4b5258;
+  --se-gray-700: #333a3f;
+  --se-gray-800: #20262a;
+  --se-gray-900: #0f1417;
+
+  /* --- Semantic accents (derived, harmonized) --- */
+  --se-info-100:    #e1ecfb;
+  --se-info-500:    #3d74d9;
+  --se-info-700:    #2256ad;
+  --se-warning-100: #fff1d6;
+  --se-warning-500: #f5a623;
+  --se-warning-700: #b9700a;
+  --se-error-100:   #fbe3e2;
+  --se-error-500:   #e4504d;
+  --se-error-700:   #b8302d;
+  --se-success-100: var(--se-green-100);
+  --se-success-500: var(--se-green-600);
+  --se-success-700: var(--se-green-800);
+
+  /* ============================================================
+     Semantic aliases — use THESE in components, not raw scales.
+     ============================================================ */
+  /* Surfaces */
+  --surface-page:      var(--se-gray-50);
+  --surface-card:      var(--se-gray-0);
+  --surface-sunken:    var(--se-gray-100);
+  --surface-inverse:   var(--se-gray-900);
+  --surface-brand:     var(--se-green-500);
+  --surface-brand-subtle: var(--se-green-50);
+
+  /* Text */
+  --text-strong:   var(--se-gray-900);
+  --text-body:     var(--se-gray-700);
+  --text-muted:    var(--se-gray-500);
+  --text-disabled: var(--se-gray-400);
+  --text-on-brand: #ffffff;
+  --text-on-inverse: var(--se-gray-50);
+  --text-link:     var(--se-green-700);
+
+  /* Borders */
+  --border-subtle: var(--se-gray-200);
+  --border-default:var(--se-gray-300);
+  --border-strong: var(--se-gray-400);
+  --border-brand:  var(--se-green-500);
+  --border-focus:  var(--se-green-600);
+
+  /* Interactive (primary action = brand green) */
+  --action-primary:        var(--se-green-500);
+  --action-primary-hover:  var(--se-green-600);
+  --action-primary-active: var(--se-green-700);
+  --action-on-primary:     #ffffff;
+
+  --action-neutral:        var(--se-gray-800);
+  --action-neutral-hover:  var(--se-gray-900);
+
+  /* Focus ring */
+  --focus-ring: 0 0 0 3px rgba(61, 205, 88, 0.40);
+}

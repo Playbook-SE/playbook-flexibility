@@ -1,0 +1,50 @@
+/* ============================================================
+   Schneider Electric — Typography tokens
+   Family: Nunito (brand). Friendly, rounded humanist sans.
+   ============================================================ */
+:root {
+  /* Families */
+  --font-brand: 'Nunito', 'Nunito Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body:  'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono:  ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Weights */
+  --fw-regular:  400; /* @kind font */
+  --fw-medium:   600; /* @kind font */
+  --fw-semibold: 700; /* @kind font */
+  --fw-bold:     800; /* @kind font */
+  --fw-black:    900; /* @kind font */
+
+  /* Type scale (1.250 major-third-ish, tuned) */
+  --fs-display: 56px;
+  --fs-h1: 40px;
+  --fs-h2: 32px;
+  --fs-h3: 24px;
+  --fs-h4: 20px;
+  --fs-body-lg: 18px;
+  --fs-body: 16px;
+  --fs-body-sm: 14px;
+  --fs-caption: 13px;
+  --fs-overline: 12px;
+
+  /* Line heights */
+  --lh-tight: 1.1; /* @kind font */
+  --lh-snug: 1.25; /* @kind font */
+  --lh-normal: 1.5; /* @kind font */
+  --lh-relaxed: 1.65; /* @kind font */
+
+  /* Letter spacing */
+  --ls-tight: -0.02em; /* @kind font */
+  --ls-normal: 0; /* @kind font */
+  --ls-wide: 0.02em; /* @kind font */
+  --ls-overline: 0.08em; /* @kind font */
+
+  /* Semantic text roles */
+  --text-display: var(--fw-black) var(--fs-display)/var(--lh-tight) var(--font-brand);
+  --text-h1: var(--fw-bold) var(--fs-h1)/var(--lh-tight) var(--font-brand);
+  --text-h2: var(--fw-bold) var(--fs-h2)/var(--lh-snug) var(--font-brand);
+  --text-h3: var(--fw-semibold) var(--fs-h3)/var(--lh-snug) var(--font-brand);
+  --text-h4: var(--fw-semibold) var(--fs-h4)/var(--lh-snug) var(--font-brand);
+  --text-body-default: var(--fw-regular) var(--fs-body)/var(--lh-normal) var(--font-body);
+  --text-label: var(--fw-semibold) var(--fs-body-sm)/var(--lh-snug) var(--font-body);
+}

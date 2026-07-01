@@ -1,0 +1,7 @@
+/* ============================================================
+   Schneider Electric — Webfont
+   Brand typeface: Nunito (Schneider's digital brand font).
+   Loaded from Google Fonts. To self-host, drop woff2 files in
+   the fonts assets folder and swap the import for a font-face rule.
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Nunito+Sans:wght@400;600;700&display=swap');

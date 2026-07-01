@@ -1,0 +1,48 @@
+/* ============================================================
+   Schneider Electric — Spacing, radius, shadow, motion, layout
+   8px base grid. Crisp, low-radius, flat-with-soft-shadow style.
+   ============================================================ */
+:root {
+  /* Spacing — 8px base (with 4px half-steps) */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+  --space-8: 48px;
+  --space-9: 64px;
+  --space-10: 80px;
+  --space-11: 96px;
+
+  /* Radius — restrained; SE UI is fairly square */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-pill: 999px;
+
+  /* Elevation — soft, cool-gray shadows (no heavy drop) */
+  --shadow-xs: 0 1px 2px rgba(15, 20, 23, 0.06);
+  --shadow-sm: 0 1px 3px rgba(15, 20, 23, 0.08), 0 1px 2px rgba(15, 20, 23, 0.04);
+  --shadow-md: 0 4px 12px rgba(15, 20, 23, 0.08), 0 2px 4px rgba(15, 20, 23, 0.04);
+  --shadow-lg: 0 12px 28px rgba(15, 20, 23, 0.12), 0 4px 8px rgba(15, 20, 23, 0.06);
+  --shadow-focus: var(--focus-ring);
+
+  /* Motion — quick, functional, no bounce */
+  --ease-standard: cubic-bezier(0.2, 0, 0.2, 1); /* @kind other */
+  --ease-out: cubic-bezier(0, 0, 0.2, 1); /* @kind other */
+  --ease-in: cubic-bezier(0.4, 0, 1, 1); /* @kind other */
+  --dur-fast: 120ms; /* @kind other */
+  --dur-base: 180ms; /* @kind other */
+  --dur-slow: 280ms; /* @kind other */
+
+  /* Layout */
+  --container-max: 1280px; /* @kind spacing */
+  --container-narrow: 880px; /* @kind spacing */
+  --sidebar-w: 248px; /* @kind spacing */
+  --header-h: 60px; /* @kind spacing */
+}
