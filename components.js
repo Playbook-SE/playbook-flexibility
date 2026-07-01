@@ -18,10 +18,8 @@
    ============================================================ */
 (function () {
   // ── VERSION EXTERNE (playbook-se.github.io) ──────────────────────────────
-  // All playbook nav links point back to the internal SE GitHub Pages site.
-  // Only persona.html stays on this external host (that's where the AI chat lives).
-  var BASE         = 'https://pages.github.schneider-electric.com/SESA565856/flexibility-playbook/';
-  var SELF_PERSONA = 'https://playbook-se.github.io/playbook-flexibility/persona.html';
+  // All nav links point to the internal SE GitHub Pages site.
+  var BASE = 'https://pages.github.schneider-electric.com/SESA565856/flexibility-playbook/';
   // ─────────────────────────────────────────────────────────────────────────
   // Brand + footer SVG logos (official Schneider Electric marks)
   var BRAND_LOGO = `<svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 218 64">
@@ -88,7 +86,7 @@
           '<div class="nav-dropdown">' +
             '<a href="' + BASE + 'customer.html">Customer overview<span class="nav-dd-sub">Focus &amp; experience</span></a>' +
             '<div class="nav-dd-sep"></div>' +
-            '<a href="' + SELF_PERSONA + '">Personas<span class="nav-dd-sub">6 profiles &amp; data flows</span></a>' +
+            '<a href="' + BASE + 'persona.html">Personas<span class="nav-dd-sub">6 profiles &amp; data flows</span></a>' +
             '<a href="' + BASE + 'onboarding.html">Onboarding<span class="nav-dd-sub">Onboarding, 13 steps</span></a>' +
             '<a href="' + BASE + 'customer.html#kpis">Expected outcomes &amp; KPIs<span class="nav-dd-sub">Expected outcomes</span></a>' +
           '</div>' +
