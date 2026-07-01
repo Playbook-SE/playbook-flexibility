@@ -6,7 +6,24 @@
 <title>EcoStruxure FlexReady API — Persona Hub | Schneider Electric</title>
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="flexready.css">
-
+<!-- Markdown renderer for AI persona chat responses -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+<style>
+/* ── Markdown rendering inside agent chat bubbles ── */
+.chat-msg p                { margin: 0 0 .5em; }
+.chat-msg p:last-child     { margin-bottom: 0; }
+.chat-msg ul, .chat-msg ol { margin: .4em 0 .5em 1.2em; padding: 0; }
+.chat-msg li               { margin-bottom: .25em; line-height: 1.45; }
+.chat-msg strong           { font-weight: 700; }
+.chat-msg em               { font-style: italic; }
+.chat-msg code             { background: rgba(0,0,0,.08); border-radius: 3px;
+                             padding: 1px 5px; font-size: .88em; font-family: monospace; }
+.chat-msg pre              { background: rgba(0,0,0,.06); border-radius: 6px;
+                             padding: .6em .8em; overflow-x: auto; margin: .4em 0; }
+.chat-msg pre code         { background: none; padding: 0; }
+.chat-msg h1, .chat-msg h2,
+.chat-msg h3               { font-size: 1em; font-weight: 700; margin: .6em 0 .2em; }
+</style>
 </head>
 <body>
 
@@ -1073,7 +1090,7 @@ function initAgent(p) {
   if (introEl && agentHistory[p.id].length === 0) {
     introEl.textContent = '…';
     callClaude(p, `Introduce yourself in 2-3 sentences as a senior ${p.name} persona. Reference your specific role with the FlexReady API (${p.apiUsage.join(', ')}). Be direct and technically specific. No generic openers.`, true)
-      .then(r => { if (introEl) introEl.textContent = r; })
+      .then(r => { if (introEl) introEl.innerHTML = typeof marked !== 'undefined' ? marked.parse(r) : r.replace(/\n/g, '<br>'); })
       .catch(() => { if (introEl) introEl.textContent = `${p.name} here — ready to discuss FlexReady API integration from my perspective.`; });
   }
   window[`sendMsg_${p.id}`] = () => sendMsg(p);
@@ -1109,7 +1126,13 @@ function appendChatMsg(pid, text, role, name) {
   wrap.className = 'chat-msg-wrap' + (role === 'user' ? ' u' : '');
   const msg = document.createElement('div');
   msg.className = 'chat-msg ' + role;
-  msg.textContent = text;
+  if (role === 'agent') {
+    msg.innerHTML = typeof marked !== 'undefined'
+      ? marked.parse(text)
+      : text.replace(/\n/g, '<br>');
+  } else {
+    msg.textContent = text;
+  }
   const meta = document.createElement('div');
   meta.className = 'chat-meta';
   meta.textContent = (role === 'user' ? 'You' : name) + ' · now';
