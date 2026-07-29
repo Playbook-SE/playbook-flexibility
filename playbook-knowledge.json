@@ -1,0 +1,934 @@
+{
+  "chunks": [
+    {
+      "id": "c0001",
+      "title": "EcoStruxure FlexReady API · Energy Interactive Product — page intro",
+      "source": "presentation",
+      "text": "Energy Interactive Without Limits A centralized, extensible integration layer that standardizes how Schneider Electric's internal systems interact with external flexibility actors — DSOs, aggregators, and energy markets — so every Line of Business can deliver flexibility services without redesigning their core products. Key stats: 5 Key Capabilities; 1 Integration Layer; IEC 62746-4 Standard Aligned; All LOBs Supported"
+    },
+    {
+      "id": "c0002",
+      "title": "Section: Product overview",
+      "source": "presentation",
+      "text": "Product overview: With the increasing demand for energy flexibility and integration with external entities such as DSOs, aggregators, and energy markets, it is essential that all Lines of Business across our organization are equipped to interact in a consistent, secure, and scalable way. Historically, each LOB has developed its own products and platforms to manage customer sites for energy monitoring, control, and reporting."
+    },
+    {
+      "id": "c0003",
+      "title": "Section: Purpose of the product",
+      "source": "presentation",
+      "text": "Purpose of the product: The Energy Interactive Product is a centralized, extensible integration layer that standardizes how our internal systems interact with external flexibility actors. It provides:"
+    },
+    {
+      "id": "c0004",
+      "title": "Section: Vision",
+      "source": "presentation",
+      "text": "Vision: Our goal is to empower each LOB to deliver flexibility capabilities to their customers without having to redesign their core products. Instead, by integrating with the Energy Interactive Product, LOBs can:"
+    },
+    {
+      "id": "c0005",
+      "title": "Section: Key capabilities",
+      "source": "presentation",
+      "text": "Key capabilities: The Energy Interactive Product is designed to serve as a unified integration and intelligence layer across the organization, enabling seamless delivery of flexibility services. It provides a set of foundational capabilities that LOBs can adopt incrementally, prioritized based on MVP focus and long-term vision."
+    },
+    {
+      "id": "c0006",
+      "title": "MARKET / OPPORTUNITY — page intro",
+      "source": "market",
+      "text": "Energy complexity at scale From retail to public infrastructure, Energy Interactive serves organizations facing the same reality: managing energy flexibility across large, fragmented portfolios. This page frames the market context and the segments where the opportunity is strongest. Key stats: 5 Target segments; Scale Multi-site focus; B2B Organisationnel"
+    },
+    {
+      "id": "c0007",
+      "title": "Market situation",
+      "source": "market",
+      "text": "Market situation: The energy market is facing growing complexity: price volatility, increasing regulatory pressure (flexibility targets, decarbonization), and highly uneven digital maturity across players. Demand for flexibility services is surging, driven by electrification and the integration of intermittent renewable energy."
+    },
+    {
+      "id": "c0008",
+      "title": "Trends & constraints",
+      "source": "market",
+      "text": "Trends & constraints: Structural trends: site digitalization, ESG requirements, the shift to real time, and data-driven decisions. Major constraints: integration costs, a shifting regulatory framework, legacy systems (heterogeneous EMS/BMS), and data silos between business lines and external players."
+    },
+    {
+      "id": "c0009",
+      "title": "Customer problems to solve",
+      "source": "market",
+      "text": "Customer problems to solve: Difficulty leveraging site data, lack of interactivity with market players (DSOs, aggregators), slow decisions due to the absence of real-time tools, and low adoption of existing solutions seen as too complex or too vertical."
+    },
+    {
+      "id": "c0010",
+      "title": "Section: Market situation",
+      "source": "market",
+      "text": "Market situation: Framing and legitimizing the market opportunity — a macro, factual and neutral view, with no reference to the offer."
+    },
+    {
+      "id": "c0011",
+      "title": "Section: Target segments in the flexibility market",
+      "source": "market",
+      "text": "Target segments in the flexibility market: Five families of organizations share the same reality — energy complexity at portfolio scale. These are organizational-level players (not personas), managing multiple sites with flexibility potential that is still largely untapped."
+    },
+    {
+      "id": "c0012",
+      "title": "MARKET TRENDS — page intro",
+      "source": "market-trends",
+      "text": "The forces reshaping energy flexibility Three structural trends are driving the demand for flexibility services — and define why a unified, standardized integration layer like FlexReady matters now. Key stats: 3 Structural trends; DERs At the edge; AI Real-time enabler"
+    },
+    {
+      "id": "c0013",
+      "title": "Trend theme: Key drivers of flexibility demand",
+      "source": "market-trends",
+      "text": "Key drivers of flexibility demand: The structural forces pushing electricity systems toward greater flexibility — on both the supply and demand sides."
+    },
+    {
+      "id": "c0014",
+      "title": "Key drivers of flexibility demand — Renewable energy expansion",
+      "source": "market-trends",
+      "text": "Renewable energy expansion: Rapid growth in wind and solar increases variability in the power system, driving the need for flexible resources that can balance intermittent generation."
+    },
+    {
+      "id": "c0015",
+      "title": "Key drivers of flexibility demand — Flexibility services & storage",
+      "source": "market-trends",
+      "text": "Flexibility services & storage: Cost reductions, better performance and supportive policies are accelerating battery storage. Batteries deliver fast-response services like frequency regulation and balancing for grid stability."
+    },
+    {
+      "id": "c0016",
+      "title": "Key drivers of flexibility demand — Electrification of end-use sectors",
+      "source": "market-trends",
+      "text": "Electrification of end-use sectors: Electric vehicles, heat pumps and industrial electrification raise overall electricity demand and create new load patterns the grid must absorb."
+    },
+    {
+      "id": "c0017",
+      "title": "Trend theme: Decentralisation & prosumers",
+      "source": "market-trends",
+      "text": "Decentralisation & prosumers: Energy generation and consumption are moving to the edge of the grid, turning consumers into active participants."
+    },
+    {
+      "id": "c0018",
+      "title": "Decentralisation & prosumers — Rise of distributed energy resources",
+      "source": "market-trends",
+      "text": "Rise of distributed energy resources: Growing use of rooftop solar, EVs and smart systems is decentralising both energy generation and consumption across the network."
+    },
+    {
+      "id": "c0019",
+      "title": "Decentralisation & prosumers — Prosumers & flexibility",
+      "source": "market-trends",
+      "text": "Prosumers & flexibility: Consumers become prosumers — producing and consuming energy. This increases available flexibility but also adds system complexity."
+    },
+    {
+      "id": "c0020",
+      "title": "Decentralisation & prosumers — Aggregation & energy communities",
+      "source": "market-trends",
+      "text": "Aggregation & energy communities: Aggregation combines small, scattered assets into market-ready portfolios, while energy communities enable local flexibility and citizen participation."
+    },
+    {
+      "id": "c0021",
+      "title": "Decentralisation & prosumers — Challenges & policy considerations",
+      "source": "market-trends",
+      "text": "Challenges & policy considerations: Data management, cybersecurity and equitable market access are key challenges that require active, ongoing policy development."
+    },
+    {
+      "id": "c0022",
+      "title": "Trend theme: Digitalisation & AI",
+      "source": "market-trends",
+      "text": "Digitalisation & AI: Technology is the enabler that makes flexibility operational at scale, in real time."
+    },
+    {
+      "id": "c0023",
+      "title": "Digitalisation & AI — Enabling energy flexibility",
+      "source": "market-trends",
+      "text": "Enabling energy flexibility: Digitalisation integrates smart meters and automated controls, enabling responsive and efficient energy flexibility markets."
+    },
+    {
+      "id": "c0024",
+      "title": "Digitalisation & AI — AI for forecasting & optimization",
+      "source": "market-trends",
+      "text": "AI for forecasting & optimization: AI and machine learning forecast demand, optimize dispatch and manage distributed energy resources more effectively than manual methods."
+    },
+    {
+      "id": "c0025",
+      "title": "Digitalisation & AI — Automation & decentralization",
+      "source": "market-trends",
+      "text": "Automation & decentralization: As flexibility decentralises, automation becomes essential — the system requires fast, real-time response that goes beyond manual control."
+    },
+    {
+      "id": "c0026",
+      "title": "CUSTOMER FOCUS — page intro",
+      "source": "customer",
+      "text": "Customer focus & experience Make value tangible through the customer experience. Who the users are, how they experience the offer, and what they expect from it."
+    },
+    {
+      "id": "c0027",
+      "title": "Personas [already built]",
+      "source": "customer",
+      "text": "Personas: Profiles of the key users — Energy Manager, Operations, IT, Sustainability — with their goals, frustrations, needs and success criteria. Already detailed in the Persona Hub."
+    },
+    {
+      "id": "c0028",
+      "title": "Key stakeholders (People) [already built]",
+      "source": "customer",
+      "text": "Key stakeholders (People): Mapping of stakeholders on both the customer and internal sides, with their roles, responsibilities and expectations. Visualized in the persona interaction diagram."
+    },
+    {
+      "id": "c0029",
+      "title": "Customer journey & onboarding [already built]",
+      "source": "customer",
+      "text": "Customer journey & onboarding: Complete journey from identifying the need to daily use, then the onboarding steps: configuration, skill-building, initial adoption, first results."
+    },
+    {
+      "id": "c0030",
+      "title": "Expected outcomes & KPIs to enrich",
+      "source": "customer",
+      "text": "Expected outcomes & KPIs to enrich: Outcomes expected by the customer: greater visibility across the portfolio, responsiveness to market signals, measurable energy performance. Indicators: event participation rate, forecast accuracy, response performance, flexibility revenue generated."
+    },
+    {
+      "id": "c0031",
+      "title": "Physical evidence [external admin]",
+      "source": "customer",
+      "text": "Physical evidence: Tangible elements that embody the value: real-time dashboards, performance reports, alerts, visual indicators — managed directly in the Energy Interactive admin site."
+    },
+    {
+      "id": "c0032",
+      "title": "Section: Customer Focus & Experience",
+      "source": "customer",
+      "text": "Customer Focus & Experience: Objective: make value tangible through the customer experience. WHO & HOW they experience it."
+    },
+    {
+      "id": "c0033",
+      "title": "Persona picker content",
+      "source": "persona",
+      "text": "Tariff Settlement data (read) Telemetry Result (read) Constraints Settlement (write, by Network) Settlement order dispatch (write, by FlexReady) Telemetry Constraints (read) Settlement order, dispatch (write, by Aggregator) Telemetry constraints forecasting settlement (read) Constraint dispatch (read) Constraints (read) Write / publish Read / consume Click any card for persona detail"
+    },
+    {
+      "id": "c0034",
+      "title": "Persona picker content",
+      "source": "persona",
+      "text": "Data exchange summary Persona Action Data With Energy Provider Read Tariff, Settlement data FlexReady System Operator Read Constraint, Dispatch Aggregator FlexReady Read Telemetry, Constraints, Forecasting, Settlement data Aggregator Aggregator Write Settlement order, Dispatch FlexReady Asset Owner / Operator Read Constraints Aggregator Asset Owner / Operator Read Telemetry, Constraints FlexReady FlexReady Write Settlement order, Dispatch Asset Owner / Operator FlexReady Read Telemetry, Settlement result Network Operator Network Operator Write Constraints, Settlement data FlexReady"
+    },
+    {
+      "id": "c0035",
+      "title": "On Exchange website — step (onboarding)",
+      "source": "onboarding",
+      "text": "On Exchange website: #: 1; Step: Connect to Exchange; Action: The aggregator connects to Exchange.se.com; Owner: Aggregator"
+    },
+    {
+      "id": "c0036",
+      "title": "On Exchange website — step (onboarding)",
+      "source": "onboarding",
+      "text": "On Exchange website: #: 2; Step: Subscribe to the offer; Action: The aggregator subscribes to the offer; Owner: Aggregator"
+    },
+    {
+      "id": "c0037",
+      "title": "On Exchange website — step (onboarding)",
+      "source": "onboarding",
+      "text": "On Exchange website: #: 3; Step: Receive credentials; Action: The aggregator receives the credentials to connect on the offer; Owner: Aggregator"
+    },
+    {
+      "id": "c0038",
+      "title": "Internal actions — step (onboarding)",
+      "source": "onboarding",
+      "text": "Internal actions: #: 4; Step: Connect credentials to EMS; Action: The SE agent creates the connection between the client's credentials and the site's EMS; Owner: SE agent"
+    },
+    {
+      "id": "c0039",
+      "title": "Internal actions — step (onboarding)",
+      "source": "onboarding",
+      "text": "Internal actions: #: 5; Step: Update EMS; Action: The on-site EMS maintainer updates the EMS so it can receive flexibility requests; Owner: EMS maintainer"
+    },
+    {
+      "id": "c0040",
+      "title": "On Flexibility Admin website — step (onboarding)",
+      "source": "onboarding",
+      "text": "On Flexibility Admin website: #: 6; Step: Connect to admin UI; Action: The SE agent connects to the Energy Interactive admin UI; Owner: SE agent"
+    },
+    {
+      "id": "c0041",
+      "title": "On Flexibility Admin website — step (onboarding)",
+      "source": "onboarding",
+      "text": "On Flexibility Admin website: #: 7; Step: Create the site; Action: The SE agent creates the site; Owner: SE agent"
+    },
+    {
+      "id": "c0042",
+      "title": "On Flexibility Admin website — step (onboarding)",
+      "source": "onboarding",
+      "text": "On Flexibility Admin website: #: 8; Step: Create the assets; Action: The SE agent creates the assets; Owner: SE agent"
+    },
+    {
+      "id": "c0043",
+      "title": "On Flexibility Admin website — step (onboarding)",
+      "source": "onboarding",
+      "text": "On Flexibility Admin website: #: 9; Step: Create the scenario; Action: The SE agent creates the scenario; Owner: SE agent"
+    },
+    {
+      "id": "c0044",
+      "title": "On Flexibility Admin website — step (onboarding)",
+      "source": "onboarding",
+      "text": "On Flexibility Admin website: #: 10; Step: Export EMS configuration file; Action: The SE agent exports an EMS configuration file from the site admin; Owner: SE agent"
+    },
+    {
+      "id": "c0045",
+      "title": "Internal actions — step (onboarding)",
+      "source": "onboarding",
+      "text": "Internal actions: #: 11; Step: Import configuration into EBO; Action: The on-site EMS maintainer (Engie, Eiffage, Dalkia) imports the configuration file into EBO; Owner: EMS maintainer"
+    },
+    {
+      "id": "c0046",
+      "title": "On Flexibility Admin website — step (onboarding)",
+      "source": "onboarding",
+      "text": "On Flexibility Admin website: #: 12; Step: Define the flexibility scenario; Action: Aggregator, SE agents, and the client jointly define the flexibility scenario — collaborative, all parties align; Owner: Aggregator + SE + client"
+    },
+    {
+      "id": "c0047",
+      "title": "On Flexibility Admin website — step (onboarding)",
+      "source": "onboarding",
+      "text": "On Flexibility Admin website: #: 13; Step: Configure the scenario; Action: The SE agent configures the scenarios in the admin UI; Owner: SE agent"
+    },
+    {
+      "id": "c0048",
+      "title": "Note (onboarding)",
+      "source": "onboarding",
+      "text": "Key insight for sales conversations: every step controlled by SE (1–4, 6–10, 12–13) happens in minutes. The only real bottlenecks are external — the EMS maintainer's import schedule (step 11) and the facility manager conversation. Set client expectations on that basis, not on SE's responsiveness."
+    },
+    {
+      "id": "c0049",
+      "title": "Warning (onboarding)",
+      "source": "onboarding",
+      "text": "Note: the facility manager discussion (owned jointly by the aggregator, Sustainability Business, and the Openness team) runs in parallel to steps 12–13 and can take up to 1 month — it is the main external variable affecting overall time-to-live."
+    },
+    {
+      "id": "c0050",
+      "title": "Note (onboarding)",
+      "source": "onboarding",
+      "text": "Once the scenario goes live, the relationship doesn't end — it shifts into the Run phase : monitoring, support, and release management. See how Run works →"
+    },
+    {
+      "id": "c0051",
+      "title": "Section: How to read this process",
+      "source": "onboarding",
+      "text": "How to read this process: The table below lists all 13 steps in sequence, grouped into 5 alternating blocks: actions on the Exchange website (aggregator self-service), internal actions (handoffs between SE and the on-site EMS maintainer), and actions on the Flexibility Admin website (SE agent configuration in Energy Interactive). The process ends with a facility manager discussion running in parallel, owned jointly by the aggregator, Sustainability Business, and the Openness team."
+    },
+    {
+      "id": "c0052",
+      "title": "Section: Aggregator-only view",
+      "source": "onboarding",
+      "text": "Aggregator-only view: Aggregators are FlexReady's natural clients. Of the 13 steps in the full process, only 4 require aggregator involvement — and 3 of those are entirely self-service on Exchange. This is the pitch: minimal operational burden, SE and the EMS maintainer carry the heavy lifting."
+    },
+    {
+      "id": "c0053",
+      "title": "OFFER POSITIONING — page intro",
+      "source": "offer",
+      "text": "Offer positioning Speak with one voice about the offer — value proposition, scope, pricing, access and promotion strategy."
+    },
+    {
+      "id": "c0054",
+      "title": "Value proposition [based on Presentation]",
+      "source": "offer",
+      "text": "Value proposition: Core promise, framed from the customer's point of view: enable each business line to deliver flexibility services to its customers without rebuilding its core products, by integrating with a unified, secure and standardized layer. A direct answer to the market problems (Part 1)."
+    },
+    {
+      "id": "c0055",
+      "title": "Product / Solution scope [detailed on Presentation]",
+      "source": "offer",
+      "text": "Product / Solution scope: Scope: standardized northbound APIs (IEC 62746-4), LOB integration adapters, site metadata management, AI modules for flexibility-potential estimation, reporting tools. Out of scope: physical management of customer-side assets (remains with the EMS)."
+    },
+    {
+      "id": "c0056",
+      "title": "Pricing & packaging logic [to complete]",
+      "source": "offer",
+      "text": "Pricing & packaging logic: Subscription + usage logic, with options. The subscription key grants access to the offer on Exchange. Contractual details are out of scope for this playbook — to be defined with the Business."
+    },
+    {
+      "id": "c0057",
+      "title": "Access & ecosystem [active links]",
+      "source": "offer",
+      "text": "Access & ecosystem: Access via the Exchange.se.com marketplace, the Developer Portal, and REST/OAuth 2.0 APIs. Positioned as an integration layer between internal systems (EBO, EMS) and the external ecosystem (DSOs, aggregators, markets)."
+    },
+    {
+      "id": "c0058",
+      "title": "Promotion strategy [to structure]",
+      "source": "offer",
+      "text": "Promotion strategy: Promotion through concrete use cases (SDEM50, IntenCity), demonstrations, quantified proof points and results-oriented key messages. Materials carried by the sales team."
+    },
+    {
+      "id": "c0059",
+      "title": "Section: Offer Positioning",
+      "source": "offer",
+      "text": "Offer Positioning: Objective: speak with one voice about the offer. WHAT we sell."
+    },
+    {
+      "id": "c0060",
+      "title": "GO-TO-MARKET — page intro",
+      "source": "gtm",
+      "text": "Go-to-Market & execution Secure execution and make it repeatable — market approach, roles, tools, delivery process and enablers."
+    },
+    {
+      "id": "c0061",
+      "title": "How to address this market [to formalize]",
+      "source": "gtm",
+      "text": "How to address this market: Market approach: prioritize segments with high flexibility potential and sufficient digital maturity (industry, multi-site commercial real estate). Enter through already-connected aggregators, then expand to end customers. Progressive sequencing from MVP to scale."
+    },
+    {
+      "id": "c0062",
+      "title": "Roles & responsibilities (Man) [RUN covered]",
+      "source": "gtm",
+      "text": "Roles & responsibilities (Man): Split across Sales / Presales / Delivery / Support / partners. The RUN-phase roles (L1/L2/L3, incident teams, ops) are already mapped."
+    },
+    {
+      "id": "c0063",
+      "title": "Tools, platforms, data (Machine) [partially covered]",
+      "source": "gtm",
+      "text": "Tools, platforms, data (Machine): Energy Interactive platform, Exchange marketplace, Developer Portal, site-side EBO/EMS, central Data Hub. Data sources: telemetry, constraints, forecasts, settlement data."
+    },
+    {
+      "id": "c0064",
+      "title": "Delivery & run processes (Method) [already built]",
+      "source": "gtm",
+      "text": "Delivery & run processes (Method): Deployment (13-step onboarding), operations, support and incident-management processes. Fully documented."
+    },
+    {
+      "id": "c0065",
+      "title": "Assets & enablers (Material) [to consolidate]",
+      "source": "gtm",
+      "text": "Assets & enablers (Material): Execution materials: pitch slides, datasheets, demo scripts, templates, API documentation. Some already exist (internal deck, ROI calculator, prospecting task list) — to be consolidated into a single kit."
+    },
+    {
+      "id": "c0066",
+      "title": "Section: Go-to-Market & Execution",
+      "source": "gtm",
+      "text": "Go-to-Market & Execution: Objective: secure execution and make it repeatable. HOW we deliver."
+    },
+    {
+      "id": "c0067",
+      "title": "Table row (run-sla)",
+      "source": "run-sla",
+      "text": "Severity: Sev 1 — Blocker; Description: Prevents any useful work for the aggregator. Significant loss or corruption of data. All features inoperable with critical business impact.; Response time: 2 hours"
+    },
+    {
+      "id": "c0068",
+      "title": "Table row (run-sla)",
+      "source": "run-sla",
+      "text": "Severity: Sev 2 — Critical; Description: Customer impact with no available workaround.; Response time: 4 hours"
+    },
+    {
+      "id": "c0069",
+      "title": "Table row (run-sla)",
+      "source": "run-sla",
+      "text": "Severity: Sev 3 — Major; Description: Error conditions are not critical, or a workaround has been identified.; Response time: 1 day"
+    },
+    {
+      "id": "c0070",
+      "title": "Table row (run-sla)",
+      "source": "run-sla",
+      "text": "Severity: Sev 4 — Minor; Description: Any deviation from specifications not covered by severity 1, 2, or 3.; Response time: 5 days"
+    },
+    {
+      "id": "c0071",
+      "title": "Table row (run-sla)",
+      "source": "run-sla",
+      "text": "Role: L1 support; Responsibility: First-line incident triage and aggregator support. Single point of contact, operated 24/7."
+    },
+    {
+      "id": "c0072",
+      "title": "Table row (run-sla)",
+      "source": "run-sla",
+      "text": "Role: L2 support; Responsibility: Technical investigation of escalated tickets. Acts as the link between the Service Desk and engineering teams."
+    },
+    {
+      "id": "c0073",
+      "title": "Table row (run-sla)",
+      "source": "run-sla",
+      "text": "Role: L3 support; Responsibility: Advanced troubleshooting, root cause analysis, hotfixes. Does not deploy directly to production or build new features."
+    },
+    {
+      "id": "c0074",
+      "title": "Table row (run-sla)",
+      "source": "run-sla",
+      "text": "Role: L3 offer support; Responsibility: Advanced troubleshooting dedicated to the specific offer — e.g. FlexReady-specific engineering."
+    },
+    {
+      "id": "c0075",
+      "title": "Table row (run-sla)",
+      "source": "run-sla",
+      "text": "Role: Incident team; Responsibility: Coordinates resolution of major or high-impact incidents across teams."
+    },
+    {
+      "id": "c0076",
+      "title": "Table row (run-sla)",
+      "source": "run-sla",
+      "text": "Role: Operations team; Responsibility: Oversees deployment pipeline, platform maintenance, and patch coordination."
+    },
+    {
+      "id": "c0077",
+      "title": "Table row (run-sla)",
+      "source": "run-sla",
+      "text": "Role: Business team; Responsibility: Validates changes from a business perspective, coordinates with content and product teams."
+    },
+    {
+      "id": "c0078",
+      "title": "Table row (run-sla)",
+      "source": "run-sla",
+      "text": "Role: Publishing team; Responsibility: Publishes API products and onboards new aggregators to the Developer Portal."
+    },
+    {
+      "id": "c0079",
+      "title": "Table row (run-sla)",
+      "source": "run-sla",
+      "text": "Role: Monitoring system; Responsibility: Automated real-time anomaly detection — triggers incident response before the aggregator may even notice."
+    },
+    {
+      "id": "c0080",
+      "title": "Table row (run-sla)",
+      "source": "run-sla",
+      "text": "Change type: Breaking change; Advance notice: 30 calendar days minimum; Notes: Previous API version remains operational during the transition period."
+    },
+    {
+      "id": "c0081",
+      "title": "Table row (run-sla)",
+      "source": "run-sla",
+      "text": "Change type: Non-breaking change; Advance notice: 14 calendar days, when reasonably practicable; Notes: Additive features, performance improvements, security patches."
+    },
+    {
+      "id": "c0082",
+      "title": "Table row (run-sla)",
+      "source": "run-sla",
+      "text": "Change type: Emergency / security fix; Advance notice: No prior notice required; Notes: Deployed immediately when necessary to protect service integrity or security."
+    },
+    {
+      "id": "c0083",
+      "title": "Table row (run-sla)",
+      "source": "run-sla",
+      "text": "Channel: Support Hub (Developer Portal); Used for: Submitting issue tickets for bugs, recurring issues, or incidents."
+    },
+    {
+      "id": "c0084",
+      "title": "Table row (run-sla)",
+      "source": "run-sla",
+      "text": "Channel: community.se.com; Used for: Status page — incident updates, service availability, ongoing resolution activity."
+    },
+    {
+      "id": "c0085",
+      "title": "Table row (run-sla)",
+      "source": "run-sla",
+      "text": "Channel: exchange.support@se.com; Used for: 24/7 support contact email."
+    },
+    {
+      "id": "c0086",
+      "title": "Table row (run-sla)",
+      "source": "run-sla",
+      "text": "Channel: Release notes; Used for: Version updates, deprecation notices, retirement timelines."
+    },
+    {
+      "id": "c0087",
+      "title": "Note (run-sla)",
+      "source": "run-sla",
+      "text": "Why this is a separate page from onboarding: onboarding is a finite sequence with a clear end — scenario live. RUN is a permanent operating state. Merging them would make both harder to read. This page picks up exactly where onboarding ends."
+    },
+    {
+      "id": "c0088",
+      "title": "Warning (run-sla)",
+      "source": "run-sla",
+      "text": "Important nuance: Schneider Electric commits to the initial response time above, and to continuously working toward mitigating impact. Full resolution time is not contractually guaranteed — it depends on the nature and complexity of the issue. For major incidents, SE may activate enhanced incident governance (\"crisis mode\") to coordinate cross-functional teams."
+    },
+    {
+      "id": "c0089",
+      "title": "Note (run-sla)",
+      "source": "run-sla",
+      "text": "Release notes are published prior to production deployment whenever practicable, via official EcoStruxure communication channels — including version identification, description of changes, and compatibility or deprecation information."
+    },
+    {
+      "id": "c0090",
+      "title": "Warning (run-sla)",
+      "source": "run-sla",
+      "text": "Scope note: this page covers the generic Openness SLA model only — shared structure, roles, severity definitions, and notice periods. It deliberately excludes data retention terms and numeric performance metrics (uptime %, latency ms), since both are offer-specific and defined separately for FlexReady."
+    },
+    {
+      "id": "c0091",
+      "title": "Section: How to read this",
+      "source": "run-sla",
+      "text": "How to read this: Unlike onboarding, RUN has no end state — it is a continuous operating loop that runs for as long as the scenario stays live. The diagram below covers release management — how a platform or API change is classified and communicated to the aggregator. Monitoring and support follows the standard Openness escalation model, shown as operational diagrams in the first tab below."
+    },
+    {
+      "id": "c0092",
+      "title": "Section: How the aggregator activates a support request",
+      "source": "run-sla",
+      "text": "How the aggregator activates a support request: The aggregator submits an issue ticket through the Developer Portal Support Hub for recurring issues, bugs, or incidents. L1 support is the single point of contact, operated 24/7. It receives, processes and routes both aggregator-reported incidents and anomalies identified internally through proactive monitoring."
+    },
+    {
+      "id": "c0093",
+      "title": "Section: How the aggregator is informed of platform changes",
+      "source": "run-sla",
+      "text": "How the aggregator is informed of platform changes: Schneider Electric manages API lifecycle through structured versioning. Breaking changes — any modification that would prevent an existing integration from functioning without changes — are only introduced through new API versions, with the previous version kept operational during the transition."
+    },
+    {
+      "id": "c0094",
+      "title": "BUSINESS MODEL — page intro",
+      "source": "business-model",
+      "text": "Business model & impact Demonstrate business credibility and viability — revenues, costs, value measurement and customer references."
+    },
+    {
+      "id": "c0095",
+      "title": "Revenue streams [to quantify]",
+      "source": "business-model",
+      "text": "Revenue streams: Revenue sources: subscription to the offer (Exchange subscription key), usage revenue tied to the volume of flexibility activated, additional revenue (AI modules, advanced reporting). Indirect revenue via the aggregator ecosystem."
+    },
+    {
+      "id": "c0096",
+      "title": "Cost structure [to detail]",
+      "source": "business-model",
+      "text": "Cost structure: Main costs: delivery and initial integration, platform run (hosting, monitoring), multi-level support (L1-L3), evolution of the offer (R&D, regulatory compliance)."
+    },
+    {
+      "id": "c0097",
+      "title": "Value measurement [ROI in progress]",
+      "source": "business-model",
+      "text": "Value measurement: Business value indicators: flexibility revenue generated for the customer, energy savings, value created for SE (ARR, margin, retention). The existing ROI calculator lays the first foundations."
+    },
+    {
+      "id": "c0098",
+      "title": "Success stories / references [2 references]",
+      "source": "business-model",
+      "text": "Success stories / references: Concrete cases and pilots illustrating real impact: SDEM50 (public sector, Manche department — 172 transactions, 784 kWh in H1 2026) and IntenCity (SE headquarters, Grenoble — 5 transactions, 450 kWh, 100% confirmed). To be expanded with financial results."
+    },
+    {
+      "id": "c0099",
+      "title": "Section: Business Model & Impact",
+      "source": "business-model",
+      "text": "Business Model & Impact: Objective: demonstrate business credibility and viability. HOW value is created."
+    },
+    {
+      "id": "c0100",
+      "title": "Detail (business-model)",
+      "source": "business-model",
+      "text": "Concrete cases and pilots illustrating real impact: SDEM50 (public sector, Manche department — 172 transactions, 784 kWh in H1 2026) and IntenCity (SE headquarters, Grenoble — 5 transactions, 450 kWh, 100% confirmed). To be expanded with financial results."
+    },
+    {
+      "id": "c0101",
+      "title": "ROADMAP & RISK — page intro",
+      "source": "roadmap",
+      "text": "Roadmap & risk Sustain & scale — a vision for how the offer evolves and how execution risks are managed."
+    },
+    {
+      "id": "c0102",
+      "title": "Roadmap [to sequence]",
+      "source": "roadmap",
+      "text": "Roadmap: Short / medium / long-term evolution vision: from the MVP (northbound APIs + assisted manual onboarding) toward enterprise adoption (self-service, multi-LOB, generalized AI modules). Aligned with the Energy Interactive Product vision."
+    },
+    {
+      "id": "c0103",
+      "title": "Business & execution risks [to prioritize]",
+      "source": "roadmap",
+      "text": "Business & execution risks: Major risks: customer adoption (perceived complexity, change management), dependence on external EMS maintainers (onboarding bottleneck), technical risk (legacy integration), organizational risk (silos between LOBs), regulatory risk."
+    },
+    {
+      "id": "c0104",
+      "title": "Mitigation levers [to formalize]",
+      "source": "roadmap",
+      "text": "Mitigation levers: Levers: API standardization to reduce integration effort, stronger support for EMS maintainers, documentation and sales enablers, cross-LOB governance led by the Digital team, continuous regulatory monitoring."
+    },
+    {
+      "id": "c0105",
+      "title": "Key next steps [in progress]",
+      "source": "roadmap",
+      "text": "Key next steps: Priority next actions: finalize pricing, consolidate the sales kit (assets & enablers), quantify the business model, and expand customer references beyond the two current pilots."
+    },
+    {
+      "id": "c0106",
+      "title": "Section: Roadmap & Risk Management",
+      "source": "roadmap",
+      "text": "Roadmap & Risk Management: Objective: sustain & scale. Evolution vision and risk management."
+    },
+    {
+      "id": "c0107",
+      "title": "GLOSSARY — page intro",
+      "source": "glossary",
+      "text": "Speaking the same language A shared reference for the technical and commercial vocabulary of the FlexReady API — so operators, sales and partners align on the same terms. Type to filter across all sections."
+    },
+    {
+      "id": "c0108",
+      "title": "Glossary: API (Application Programming Interface)",
+      "source": "glossary",
+      "text": "API (Application Programming Interface) (Technical): A standardized contract that lets two software systems exchange data. The FlexReady API is how external partners read from and write to the Energy Interactive platform."
+    },
+    {
+      "id": "c0109",
+      "title": "Glossary: Northbound API",
+      "source": "glossary",
+      "text": "Northbound API (Technical): The outward-facing APIs that external stakeholders (DSOs, aggregators, markets) call to interact with the platform — as opposed to internal, system-facing integrations."
+    },
+    {
+      "id": "c0110",
+      "title": "Glossary: REST",
+      "source": "glossary",
+      "text": "REST (Technical): An architectural style for web APIs based on standard HTTP methods (GET, POST, PUT). The FlexReady API is RESTful and exchanges data in JSON."
+    },
+    {
+      "id": "c0111",
+      "title": "Glossary: OAuth 2.0",
+      "source": "glossary",
+      "text": "OAuth 2.0 (Technical): The authorization standard used to secure API access: a partner obtains a token that grants scoped, time-limited permissions instead of sharing credentials."
+    },
+    {
+      "id": "c0112",
+      "title": "Glossary: Telemetry",
+      "source": "glossary",
+      "text": "Telemetry (Technical): Real-time measurement data streamed from a site or asset (e.g. power, energy, status). Read via GET /telemetry/realtime."
+    },
+    {
+      "id": "c0113",
+      "title": "Glossary: DER",
+      "source": "glossary",
+      "text": "DER (Technical): Distributed energy resources(e.g. battery, Photovoltaic)"
+    },
+    {
+      "id": "c0114",
+      "title": "Glossary: Dispatch",
+      "source": "glossary",
+      "text": "Dispatch (Technical): An instruction sent to an asset or portfolio to change its power profile (increase, reduce, shift) at a given time. Triggered via POST /dispatch/activate."
+    },
+    {
+      "id": "c0115",
+      "title": "Glossary: Setpoint",
+      "source": "glossary",
+      "text": "Setpoint (Technical): A target operating value (e.g. a power level in kW) pushed to an asset so it adjusts its behaviour. Set via PUT /schedule/setpoint."
+    },
+    {
+      "id": "c0116",
+      "title": "Glossary: Constraint",
+      "source": "glossary",
+      "text": "Constraint (Technical): A limit that bounds what an asset or the grid can do at a given moment (e.g. max import, voltage limits). Constraints are shared between operators and the platform."
+    },
+    {
+      "id": "c0117",
+      "title": "Glossary: Settlement",
+      "source": "glossary",
+      "text": "Settlement (Technical): The reconciliation step that turns delivered flexibility into verified volumes and payments — who did what, when, and what they are owed."
+    },
+    {
+      "id": "c0118",
+      "title": "Glossary: Forecasting",
+      "source": "glossary",
+      "text": "Forecasting (Technical): Predicting future consumption, generation, or flexibility potential of a site, used to plan dispatch and bid into markets."
+    },
+    {
+      "id": "c0119",
+      "title": "Glossary: Baseline",
+      "source": "glossary",
+      "text": "Baseline (Technical): The expected consumption profile a site would have followed without any flexibility action. Flexibility delivered is measured as the gap between baseline and actual."
+    },
+    {
+      "id": "c0120",
+      "title": "Glossary: aFRR (automatic Frequency Restoration Reserve)",
+      "source": "glossary",
+      "text": "aFRR (automatic Frequency Restoration Reserve) (Technical): A fast, automatically-activated grid balancing service that restores frequency after an imbalance. One of the flexibility products a site can provide."
+    },
+    {
+      "id": "c0121",
+      "title": "Glossary: mFRR (manual Frequency Restoration Reserve)",
+      "source": "glossary",
+      "text": "mFRR (manual Frequency Restoration Reserve) (Technical): A grid balancing reserve activated manually by the system operator, typically slower than aFRR. Another flexibility product served via the platform."
+    },
+    {
+      "id": "c0122",
+      "title": "Glossary: Curtailment",
+      "source": "glossary",
+      "text": "Curtailment (Technical): Deliberately reducing a site's consumption (or a generator's output) in response to a grid signal or price — a core flexibility action."
+    },
+    {
+      "id": "c0123",
+      "title": "Glossary: Demand response",
+      "source": "glossary",
+      "text": "Demand response (Technical): Adjusting electricity consumption in response to grid needs or price signals, rather than changing supply. The umbrella behaviour FlexReady enables at scale."
+    },
+    {
+      "id": "c0124",
+      "title": "Glossary: EMS (Energy Management System)",
+      "source": "glossary",
+      "text": "EMS (Energy Management System) (Technical): Software that monitors and controls energy use across a site. Often the system FlexReady integrates with to read data and apply setpoints."
+    },
+    {
+      "id": "c0125",
+      "title": "Glossary: BMS (Building Management System)",
+      "source": "glossary",
+      "text": "BMS (Building Management System) (Technical): Software controlling a building's technical equipment (HVAC, lighting). A common source of site data and a control point for flexibility."
+    },
+    {
+      "id": "c0126",
+      "title": "Glossary: EBO (EcoStruxure Building Operation)",
+      "source": "glossary",
+      "text": "EBO (EcoStruxure Building Operation) (Technical): Schneider Electric's building management platform. In pilots, the EMS/BMS feeding site data into FlexReady."
+    },
+    {
+      "id": "c0127",
+      "title": "Glossary: IEC 62746-4",
+      "source": "glossary",
+      "text": "IEC 62746-4 (Technical): An international standard for the interface between grid operators and demand-side resources. The FlexReady northbound APIs align with it for interoperability."
+    },
+    {
+      "id": "c0128",
+      "title": "Glossary: LOB (Line of Business)",
+      "source": "glossary",
+      "text": "LOB (Line of Business) (Technical): An internal Schneider business unit. FlexReady is the shared layer that lets every LOB deliver flexibility without rebuilding its own products."
+    },
+    {
+      "id": "c0129",
+      "title": "Glossary: SLA (Service Level Agreement)",
+      "source": "glossary",
+      "text": "SLA (Service Level Agreement) (Technical): The committed levels of service (response times, severity handling, release notice) the platform guarantees during the Run phase."
+    },
+    {
+      "id": "c0130",
+      "title": "Glossary: Flexibility",
+      "source": "glossary",
+      "text": "Flexibility (Commercial): The ability to shift, reduce, or increase electricity use or generation on demand. The core value FlexReady helps organizations monetize and grid operators rely on."
+    },
+    {
+      "id": "c0131",
+      "title": "Glossary: Flexibility services",
+      "source": "glossary",
+      "text": "Flexibility services (Commercial): Market products built on flexibility (balancing, capacity, congestion relief) that organizations get paid to provide."
+    },
+    {
+      "id": "c0132",
+      "title": "Glossary: Aggregator",
+      "source": "glossary",
+      "text": "Aggregator (Commercial): A company that pools flexibility from many sites and sells it on energy markets. A key commercial partner and a primary user of the FlexReady API."
+    },
+    {
+      "id": "c0133",
+      "title": "Glossary: DSO (Distribution System Operator)",
+      "source": "glossary",
+      "text": "DSO (Distribution System Operator) (Commercial): The operator of the local electricity distribution grid. A core market actor that requests and consumes flexibility to manage congestion."
+    },
+    {
+      "id": "c0134",
+      "title": "Glossary: Energy provider / supplier",
+      "source": "glossary",
+      "text": "Energy provider / supplier (Commercial): The company selling electricity to end customers. Reads tariff and settlement data from the platform."
+    },
+    {
+      "id": "c0135",
+      "title": "Glossary: Energy Interactive Product",
+      "source": "glossary",
+      "text": "Energy Interactive Product (Commercial): Schneider's centralized integration layer that standardizes how internal systems interact with external flexibility actors. FlexReady is its API surface."
+    },
+    {
+      "id": "c0136",
+      "title": "Glossary: Value proposition",
+      "source": "glossary",
+      "text": "Value proposition (Commercial): The core promise to the customer: deliver flexibility services without rebuilding core products, via one unified, standardized, secure layer."
+    },
+    {
+      "id": "c0137",
+      "title": "Glossary: Exchange (Schneider Electric Exchange)",
+      "source": "glossary",
+      "text": "Exchange (Schneider Electric Exchange) (Commercial): The marketplace where the FlexReady API is published and where partners obtain access and subscription keys."
+    },
+    {
+      "id": "c0138",
+      "title": "Glossary: Subscription key",
+      "source": "glossary",
+      "text": "Subscription key (Commercial): The credential a partner obtains on Exchange to access the FlexReady API under a given commercial plan."
+    },
+    {
+      "id": "c0139",
+      "title": "Glossary: MVP (Minimum Viable Product)",
+      "source": "glossary",
+      "text": "MVP (Minimum Viable Product) (Commercial): The first usable version of the offer, used to validate value with early customers before scaling to enterprise-wide adoption."
+    },
+    {
+      "id": "c0140",
+      "title": "Glossary: ARR (Annual Recurring Revenue)",
+      "source": "glossary",
+      "text": "ARR (Annual Recurring Revenue) (Commercial): The normalized yearly value of subscription revenue — a key metric for the business model's viability."
+    },
+    {
+      "id": "c0141",
+      "title": "Glossary: Use case",
+      "source": "glossary",
+      "text": "Use case (Commercial): A concrete, named scenario showing how a customer derives value (e.g. SDEM50, IntenCity), used in promotion and proof of value."
+    },
+    {
+      "id": "c0142",
+      "title": "Glossary: Onboarding",
+      "source": "glossary",
+      "text": "Onboarding (Commercial): The structured process of bringing a new site or partner live on the platform — configuration, skill-building, first results (detailed on the Onboarding page)."
+    },
+    {
+      "id": "c0143",
+      "title": "Glossary: Run phase",
+      "source": "glossary",
+      "text": "Run phase (Commercial): The operational life of the service after go-live: monitoring, support, incident handling and release management (detailed on the Run & SLA page)."
+    },
+    {
+      "id": "c0144",
+      "title": "Glossary: System Operator",
+      "source": "glossary",
+      "text": "System Operator (Persona): Operates the transmission grid and procures balancing services. Reads constraint and dispatch data to keep the grid stable."
+    },
+    {
+      "id": "c0145",
+      "title": "Glossary: Network Operator",
+      "source": "glossary",
+      "text": "Network Operator (Persona): Manages a portion of the grid network; writes constraints and settlement data to the platform and consumes telemetry."
+    },
+    {
+      "id": "c0146",
+      "title": "Glossary: Aggregator (persona)",
+      "source": "glossary",
+      "text": "Aggregator (persona) (Persona): Pools and dispatches flexibility across sites; writes settlement orders and dispatch to FlexReady and reads telemetry and forecasting."
+    },
+    {
+      "id": "c0147",
+      "title": "Glossary: Asset Owner / Operator",
+      "source": "glossary",
+      "text": "Asset Owner / Operator (Persona): Owns or runs the physical sites and assets providing flexibility; reads constraints and telemetry, receives dispatch instructions."
+    },
+    {
+      "id": "c0148",
+      "title": "Glossary: Energy Provider (persona)",
+      "source": "glossary",
+      "text": "Energy Provider (persona) (Persona): Supplies electricity to customers; reads tariff and settlement data from the platform."
+    },
+    {
+      "id": "c0149",
+      "title": "Glossary: FlexReady Platform Operator",
+      "source": "glossary",
+      "text": "FlexReady Platform Operator (Persona): The central role operating the Energy Interactive platform itself — routing telemetry, dispatch, forecasting and settlement between all other roles."
+    },
+    {
+      "id": "c0150",
+      "title": "Glossary section: Technical terms",
+      "source": "glossary",
+      "text": "API concepts, data flows and grid services used across the platform."
+    },
+    {
+      "id": "c0151",
+      "title": "Glossary section: Commercial terms",
+      "source": "glossary",
+      "text": "Market, offer and business vocabulary for sales and partner conversations."
+    },
+    {
+      "id": "c0152",
+      "title": "Glossary section: Personas & roles",
+      "source": "glossary",
+      "text": "The key actors in the flexibility ecosystem."
+    }
+  ],
+  "meta": {
+    "generated_from": "flexibility-playbook-main (internal repo HTML)",
+    "num_chunks": 152,
+    "pages": [
+      "presentation.html",
+      "market.html",
+      "market-trends.html",
+      "customer.html",
+      "persona.html",
+      "onboarding.html",
+      "offer.html",
+      "gtm.html",
+      "run-sla.html",
+      "business-model.html",
+      "roadmap.html",
+      "glossary.html"
+    ]
+  }
+}
