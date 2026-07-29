@@ -236,7 +236,22 @@ const SECTORS = [
 // ════════════════════════════════════════════════════════════
 // PERSONAS — 5 consolidated groups from FlexReady v10
 // ════════════════════════════════════════════════════════════
-const PERSONAS = [
+const RESPONSE_FORMAT_INSTRUCTIONS = `
+
+# RESPONSE FORMAT
+Your replies are rendered as Markdown → HTML in a chat widget. Always format
+your answers so they are easy to scan:
+- Keep paragraphs short (2–4 sentences). Never return a single dense block of text.
+- Use a Markdown bullet list ("- ") or numbered list ("1. ") whenever you give more
+  than two items, steps, or comparisons.
+- Use **bold** to highlight key terms, numbers, or product names.
+- Insert a blank line between paragraphs and between a paragraph and a list —
+  this is required for the list to render correctly.
+- Use a "### Subheading" only for longer answers covering 3+ distinct topics.
+- Do not write raw HTML tags — use Markdown syntax only (it is converted to HTML
+  automatically).
+Keep answers concise overall: prefer clear structure over length.`;
+	const PERSONAS = [
 
   // ── 1. SYSTEM OPERATOR ──────────────────────────────────
   {
@@ -1175,7 +1190,7 @@ async function callClaude(p, msg, isIntro) {
   const resp = await fetch(PERSONA_BACKEND_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ persona_id: p.id, system: p.systemPrompt, messages })
+    body: JSON.stringify({ persona_id: p.id, system: p.systemPrompt + RESPONSE_FORMAT_INSTRUCTIONS, messages })
   });
   const data = await resp.json();
   const text = data.content?.map(b => b.text || '').join('') || '…';
