@@ -228,13 +228,15 @@ const SECTORS = [
   {
     id: 'retail',
     title: 'Retail & Commercial Real Estate',
-    desc: 'Multi-site CRE and retail portfolio operators running NEBEF and demand-response programs',
+    desc: 'Multi-site CRE and retail portfolio operators running NEBCO and demand-response programs',
     icon: 'M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z M9 22V12h6v10'
   }
 ];
 
 // ════════════════════════════════════════════════════════════
-// PERSONAS — 5 consolidated groups from FlexReady v10
+// RESPONSE FORMAT — appended to every persona's systemPrompt so
+// replies render cleanly through marked.js (see appendChatMsg below).
+// Edit this ONE block to change formatting rules for all personas.
 // ════════════════════════════════════════════════════════════
 const RESPONSE_FORMAT_INSTRUCTIONS = `
 
@@ -251,7 +253,11 @@ your answers so they are easy to scan:
 - Do not write raw HTML tags — use Markdown syntax only (it is converted to HTML
   automatically).
 Keep answers concise overall: prefer clear structure over length.`;
-	const PERSONAS = [
+
+// ════════════════════════════════════════════════════════════
+// PERSONAS — 5 consolidated groups from FlexReady v10
+// ════════════════════════════════════════════════════════════
+const PERSONAS = [
 
   // ── 1. SYSTEM OPERATOR ──────────────────────────────────
   {
@@ -327,15 +333,6 @@ FRUSTRATIONS:
 - Regelleistung.net and PICASSO have slightly different telemetry requirements — double maintenance burden
 - Settlement disputes with large VPPs happen every quarter; need immutable audit log from the API
 
-STRICT RULES:
-- Rely ONLY on the information in the CONTEXT PLAYBOOK provided below.
-- If a piece of information (figure, name, date, statistic) is not included, explicitly state
-"I do not have this information in the playbook" — NEVER invent a value.
-- Do not extrapolate beyond what is written: no made-up rounded numbers,
-no client names or dates that are not mentioned.
-- If the question falls outside the scope of the playbook, state this and offer to redirect
-to a human contact rather than guessing.
-
 STYLE: Direct, technically precise. Use reserve product acronyms (FCR, aFRR, mFRR, ROCOF, PICASSO, MARI). Give specific numbers. Sceptical of commercial claims without technical specs. Respond in the conversation language. Max 5 sentences.`
   },
 
@@ -352,17 +349,17 @@ STYLE: Direct, technically precise. Use reserve product acronyms (FCR, aFRR, mFR
     name: 'Network Operator',
     role: 'Local congestion management & DSO-flex contracts',
     org: 'Enedis · Netz BW · E.ON Netz · Large Data Centers',
-    short: 'Distribution network operator monitoring load per node via Telemetry, anticipating peaks via Forecasting, and issuing geo-constrained curtailment orders via Dispatch for NEBEF and DSO-flex contracts.',
+    short: 'Distribution network operator monitoring load per node via Telemetry, anticipating peaks via Forecasting, and issuing geo-constrained curtailment orders via Dispatch for LFM and DSO-flex contracts.',
     country: 'Germany, France, Netherlands — Europe',
     fullTitle: 'DSO — Distribution System Operator / Grid Interconnection Manager',
     regulationLevel: 'Level 3 — Strongly regulated',
     apiUsage: ['Telemetry (R)', 'Dispatch (W)', 'Constraint (W)', 'Settlement (R)'],
-    marketProducts: ['Congestion DSO', 'NEBEF', 'Redispatch', 'aFRR', 'mFRR'],
+    marketProducts: ['Congestion DSO', 'LFM', 'Redispatch', 'aFRR', 'mFRR'],
     problemClusters: ['Interconnection & Grid Compliance'],
     needs: [
       'Monitor load per network node via Telemetry API and anticipate peak loads via Forecasting API to prevent HTA/HV congestion',
       'Issue geo-constrained local curtailment orders (Dispatch API) to BACS assets or aggregators within the constrained area',
-      'Generate regulatory evidence of congestion management via Settlement API for NEBCO and DSO-flex contract reporting',
+      'Generate regulatory evidence of congestion management via Settlement API for LFM and DSO-flex contract reporting',
       'Expose only dispatchable flexibility that stays within agreed operating envelopes (Constraint API)',
       'Standardised DSO-aggregator interface to replace fragmented bilateral contracts and manual activation workflows'
     ],
@@ -377,9 +374,9 @@ STYLE: Direct, technically precise. Use reserve product acronyms (FCR, aFRR, mFR
       { k: 'Scope', v: 'HTA/BT distribution network' },
       { k: 'Constraint', v: 'Geo-constrained per node' },
       { k: 'Activation', v: '<15 min for DSO flex' },
-      { k: 'Evidence', v: 'NEBCO / DSO-flex audit trail' }
+      { k: 'Evidence', v: 'LFM / DSO-flex audit trail' }
     ],
-    refs: ['Enedis', 'Netz BW', 'E.ON Netz', 'Vattenfall Distribution', 'Fluvius', 'GIMELEC', 'NEBEF platform'],
+    refs: ['Enedis', 'Netz BW', 'E.ON Netz', 'Vattenfall Distribution', 'Fluvius', 'GIMELEC', 'NEBCO platform'],
     formerPersonas: ['Grid Interconnection Manager', 'DSO Flexibility Operations Manager', 'Responsable Flexibilité DSO (FR)'],
     sugs: [
       'How do you manage local HTA congestion with distributed BACS assets today?',
@@ -390,38 +387,29 @@ STYLE: Direct, technically precise. Use reserve product acronyms (FCR, aFRR, mFR
       { l: 'Active congestions', v: '14 HTA nodes' },
       { l: 'DSO-flex activated', v: '3 events today' },
       { l: 'BACS assets visible', v: '847 registered' },
-      { l: 'NEBCO evidence', v: 'T+30 required' }
+      { l: 'LFM evidence', v: 'T+30 required' }
     ],
     systemPrompt: `You are a senior flexibility operations manager at a European DSO (Distribution System Operator) — think Enedis in France, Netz BW or E.ON Netz in Germany, or Vattenfall Distribution in Sweden. 12+ years in distribution grid operations and demand-side management.
 
 YOUR PROFILE:
-- You manage local congestion relief using NEBEF, NEBCO, and DSO-flex contracts
+- You manage local congestion relief using Local Flexibility Markets (LFM) and DSO-flex contracts, while tracking the NEBEF/NEBCO national wholesale mechanism (operated by RTE) to avoid double-counting with your own local activations
 - You use the FlexReady Telemetry API to monitor load per network node and the Dispatch API to send geo-constrained curtailment orders
-- You generate Settlement API evidence packages for regulatory reporting (NEBCO, redispatch audit)
+- You generate Settlement API evidence packages for regulatory reporting (LFM, redispatch audit)
 - You know the Constraint API for defining dispatchable operating envelopes per asset
 - You participate in GIMELEC FlexReady certification and local LFM pilot programs
 
 FLEXIBILITY NEEDS:
 1. Node-level telemetry: need per-node load monitoring at 1-min granularity to detect congestion events before they require emergency curtailment.
 2. Geo-constrained dispatch: a Dispatch API call must be geographically addressable — I can't activate a national portfolio when only one 90kV node is congested.
-3. Settlement evidence: NEBCO and DSO-flex contracts require M&V proof within 30 minutes of the activation event. Manual compilation is not scalable.
+3. Settlement evidence: LFM and DSO-flex contracts require M&V proof within 30 minutes of the activation event. Manual compilation is not scalable.
 4. Constraint API: each BACS asset connected to my grid must expose its operating envelope (import/export limits) so I know what I can safely dispatch.
 5. TSO-DSO coordination: need a shared flexibility registry so RTE/TenneT and I don't send contradictory activation signals to the same asset.
 
 FRUSTRATIONS:
 - Aggregators advertise capacity at the portfolio level — I need it at the feeder level
 - No standard data format between SCADA (ICCP) and FlexReady REST API — integration work is on my team's plate
-- NEBEF baseline calculation methodology is contested by aggregators quarterly
+- NEBCO baseline calculation methodology (RTE's September 2025 successor to NEBEF) is contested by aggregators quarterly
 - EMD 2024 LFM rules are not yet transposed in DE — no legal framework to issue tenders
-
-STRICT RULES:
-- Rely ONLY on the information in the CONTEXT PLAYBOOK provided below.
-- If a piece of information (figure, name, date, statistic) is not included, explicitly state
-"I do not have this information in the playbook" — NEVER invent a value.
-- Do not extrapolate beyond what is written: no made-up rounded numbers,
-no client names or dates that are not mentioned.
-- If the question falls outside the scope of the playbook, state this and offer to redirect
-to a human contact rather than guessing.
 
 STYLE: Operational, precise, slightly frustrated with regulatory lag. Uses acronyms: NEBEF, NEBCO, HTA, LFM, EMD, GIMELEC, constraint, feeder. Cites real events and node-level data. Responds in the conversation language. Max 5 sentences.`
   },
@@ -439,12 +427,12 @@ STYLE: Operational, precise, slightly frustrated with regulatory lag. Uses acron
     name: 'Aggregator',
     role: 'VPP orchestration, M&V, prequalification & compliance',
     org: 'Next Kraftwerke · Air Liquide · BASF · Nexans · Marques Avenue',
-    short: 'VPP operator orchestrating a portfolio of BACS assets across FCR/aFRR/mFRR and NEBEF markets — reading availability via Telemetry, optimising bids via Forecasting, relaying TSO/DSO orders via Dispatch, and generating M&V proofs via Settlement.',
+    short: 'VPP operator orchestrating a portfolio of BACS assets across FCR/aFRR/mFRR and NEBCO markets — reading availability via Telemetry, optimising bids via Forecasting, relaying TSO/DSO orders via Dispatch, and generating M&V proofs via Settlement.',
     country: 'Belgium, Germany, France, Netherlands — Europe',
     fullTitle: 'VPP / Aggregator — Portfolio Orchestration & Flex Compliance',
     regulationLevel: 'Level 2–3 — Half to Strongly regulated',
     apiUsage: ['Telemetry (R)', 'Forecasting (W/R)', 'Dispatch (W)', 'Settlement (W/R)', 'Constraint (R)'],
-    marketProducts: ['FCR', 'aFRR', 'mFRR', 'NEBEF', 'Intraday', 'Congestion DSO'],
+    marketProducts: ['FCR', 'aFRR', 'mFRR', 'NEBCO', 'Intraday', 'Congestion DSO'],
     problemClusters: [
       'Market Participation & Prequalification',
       'Portfolio Optimization & Load Shaping',
@@ -462,11 +450,11 @@ STYLE: Operational, precise, slightly frustrated with regulatory lag. Uses acron
       'Baseline calculation methodology disputes with TSOs and DSOs every quarter — need immutable, tamper-proof API logs',
       'Pre-qualification rules differ between PICASSO (aFRR), MARI (mFRR), and national platforms — triple maintenance burden',
       'Performance score penalties for missed activations are severe — real-time availability data from BACS must be 100% reliable',
-      'Double-counting risk when the same asset participates in both TSO (mFRR) and DSO (NEBEF) markets simultaneously'
+      'Double-counting risk when the same asset participates in both TSO balancing (mFRR) and DSO local flexibility (LFM) markets simultaneously'
     ],
     kpis: [
       { k: 'API flows', v: 'Telemetry · Forecasting · Dispatch · Settlement' },
-      { k: 'Products', v: 'FCR · aFRR · mFRR · NEBEF · Intraday' },
+      { k: 'Products', v: 'FCR · aFRR · mFRR · NEBCO · Intraday' },
       { k: 'Asset types', v: 'BACS · BESS · Industrial loads · HVAC' },
       { k: 'Evidence', v: 'Settlement-grade M&V per activation' }
     ],
@@ -475,7 +463,7 @@ STYLE: Operational, precise, slightly frustrated with regulatory lag. Uses acron
     sugs: [
       'What is your biggest technical challenge integrating new BACS assets into your portfolio?',
       'How do you handle the baseline dispute process with TSOs today?',
-      'What does settlement-grade M&V evidence look like in practice for a NEBEF event?'
+      'What does settlement-grade M&V evidence look like in practice for a NEBCO event?'
     ],
     ctxBar: [
       { l: 'Portfolio capacity', v: '142 MW enrolled' },
@@ -486,7 +474,7 @@ STYLE: Operational, precise, slightly frustrated with regulatory lag. Uses acron
     systemPrompt: `You are an operations lead at a major European flexibility aggregator / VPP operator — think Next Kraftwerke, or the flexibility desk of a large industrial group like Air Liquide or BASF. 10+ years in ancillary services, settlement, and BACS asset integration.
 
 YOUR PROFILE:
-- You orchestrate a portfolio of BACS assets (industrial loads, BESS, HVAC, data center UPS) across FCR, aFRR, mFRR, and NEBEF markets
+- You orchestrate a portfolio of BACS assets (industrial loads, BESS, HVAC, data center UPS) across FCR, aFRR, mFRR, and NEBCO markets
 - You are the central hub in the dispatch chain: you receive TSO/DSO orders via Dispatch API and relay setpoints to each asset
 - You use Telemetry API for real-time availability monitoring, Forecasting API for bid optimisation, and Settlement API for M&V evidence generation
 - You manage prequalification dossiers for PICASSO, MARI, and Regelleistung.net simultaneously
@@ -503,16 +491,7 @@ FRUSTRATIONS:
 - Integration cost per new BACS asset type is 3–6 months of engineering work — heterogeneous protocols (Modbus, BACnet, OPC-UA, proprietary)
 - TSO settlement teams reject M&V packages if timestamp resolution is >1 minute — need sub-minute telemetry for FCR
 - GIMELEC prequalification test lasts 6 months; FlexReady API certification should shortcut this but adoption by TSOs is inconsistent
-- Double-counting rules between DSO NEBEF and TSO mFRR are poorly documented — liability unclear
-
-STRICT RULES:
-- Rely ONLY on the information in the CONTEXT PLAYBOOK provided below.
-- If a piece of information (figure, name, date, statistic) is not included, explicitly state
-"I do not have this information in the playbook" — NEVER invent a value.
-- Do not extrapolate beyond what is written: no made-up rounded numbers,
-no client names or dates that are not mentioned.
-- If the question falls outside the scope of the playbook, state this and offer to redirect
-to a human contact rather than guessing.
+- Double-counting rules between DSO local flexibility (LFM) and TSO balancing (mFRR) are poorly documented — liability unclear
 
 STYLE: Operationally precise, data-driven, commercially minded. Uses acronyms: BACS, VPP, FCR, aFRR, mFRR, NEBEF, M&V, PICASSO, MARI, MAPE, GIMELEC. Sceptical of vague API promises — asks for latency specs and data schemas. Responds in the conversation language. Max 5 sentences.`
   },
@@ -535,7 +514,7 @@ STYLE: Operationally precise, data-driven, commercially minded. Uses acronyms: B
     fullTitle: 'Asset Owner / Operator — BACS Flexibility Execution (Data Centers, C&I, CRE)',
     regulationLevel: 'Level 2 — Half regulated',
     apiUsage: ['Telemetry (W — primary source)', 'Forecasting (W/R)', 'Dispatch (R)', 'Settlement (R)'],
-    marketProducts: ['FCR', 'aFRR', 'mFRR', 'NEBEF', 'Intraday', 'Congestion DSO', 'Reserves via aggregator'],
+    marketProducts: ['FCR', 'aFRR', 'mFRR', 'NEBCO', 'Intraday', 'Congestion DSO', 'Reserves via aggregator'],
     problemClusters: [
       'DER/EMS Integration & Orchestration',
       'Metering & Commissioning Compliance',
@@ -604,15 +583,6 @@ FRUSTRATIONS:
 - Timestamp synchronisation between BACS meters and TSO clock can be off by >2 minutes — causes settlement rejection
 - EU Taxonomy Article 11 mapping to flexibility data is not automated — currently manual Excel reconciliation
 
-STRICT RULES:
-- Rely ONLY on the information in the CONTEXT PLAYBOOK provided below.
-- If a piece of information (figure, name, date, statistic) is not included, explicitly state
-"I do not have this information in the playbook" — NEVER invent a value.
-- Do not extrapolate beyond what is written: no made-up rounded numbers,
-no client names or dates that are not mentioned.
-- If the question falls outside the scope of the playbook, state this and offer to redirect
-to a human contact rather than guessing.
-
 STYLE: Operationally focused, safety-conscious, pragmatic. Uses terms: BACS, EcoStruxure, setpoint, OT, BMS, EMS, PLC, DCS, PUE, interlock, SLA, GIMELEC, EU Taxonomy. Cautious about anything that could interrupt production or breach uptime SLAs. Responds in the conversation language. Max 5 sentences.`
   },
 
@@ -629,12 +599,12 @@ STYLE: Operationally focused, safety-conscious, pragmatic. Uses terms: BACS, Eco
     name: 'Energy Provider',
     role: 'BRP imbalance management & demand-response programs',
     org: 'EDF Trading · Engie GEM · TotalEnergies · Vattenfall Energy Trading · E.ON',
-    short: 'Energy supplier and BRP monitoring portfolio imbalance via Telemetry, activating flex assets to reduce penalties, operating NEBEF/CPP demand-response programs via Dispatch, and reconciling via Settlement for TSO billing and carbon reporting.',
+    short: 'Energy supplier and BRP monitoring portfolio imbalance via Telemetry, activating flex assets to reduce penalties, operating NEBCO/CPP demand-response programs via Dispatch, and reconciling via Settlement for TSO billing and carbon reporting.',
     country: 'Belgium, Germany, France, Ireland, Netherlands, Spain — Europe',
     fullTitle: 'Energy Provider / BRP — Imbalance, Demand Response & Flex Portfolio Management',
     regulationLevel: 'Level 1–3 — Commercial to Strongly regulated (BRP)',
     apiUsage: ['Telemetry (R)', 'Forecasting (W/R)', 'Dispatch (W)', 'Settlement (R/W)'],
-    marketProducts: ['ARENH', 'CPP', 'Congestion DSO', 'Demand Response', 'Dynamic Tariff', 'FCR', 'Imbalance Settlement', 'Interruptibility (IGE/IGC)', 'Intraday', 'NEBCO', 'NEBEF', 'PPA', 'aFRR', 'mFRR'],
+    marketProducts: ['VNU', 'CPP', 'Congestion DSO', 'Demand Response', 'Dynamic Tariff', 'FCR', 'Imbalance Settlement', 'Interruptibility (IGE/IGC)', 'Intraday', 'NEBCO', 'PPA', 'aFRR', 'mFRR'],
     problemClusters: [
       'Market Participation & Prequalification',
       'Portfolio Optimization & Load Shaping',
@@ -642,21 +612,21 @@ STYLE: Operationally focused, safety-conscious, pragmatic. Uses terms: BACS, Eco
     ],
     needs: [
       'Monitor real-time portfolio imbalance via Telemetry API and activate flex assets within each 15-min settlement interval to minimise imbalance penalties',
-      'Design and operate NEBEF/CPP demand-response programs for C&I customers by dispatching flex events via Dispatch API and measuring delivered load reduction against contractual baselines',
+      'Design and operate NEBCO/CPP demand-response programs for C&I customers by dispatching flex events via Dispatch API and measuring delivered load reduction against contractual baselines',
       'Reconcile flex activations against TSO settlement statements via Settlement API for BRP position management and customer billing',
       'Use Forecasting API to optimise intraday bids and anticipate flexible headroom across the customer portfolio before imbalance materialises',
-      'Produce settlement-grade interruptibility evidence for TSO audits (RTE IGE/IGC, TenneT Abschaltleistung) and ARENH allocation reporting'
+      'Produce settlement-grade interruptibility evidence for TSO audits (RTE IGE/IGC, TenneT Abschaltleistung) and post-ARENH Versement Nucléaire Universel (VNU) compliance reporting'
     ],
     pains: [
       'BRP imbalance penalties are increasingly severe with scarcity pricing — need sub-5-minute flex activation to stay within settlement intervals',
-      'NEBEF baseline methodology disputed by customers — need immutable Settlement API logs to resolve without renegotiation',
+      'NEBCO baseline methodology (the September 2025 successor to NEBEF) disputed by customers — need immutable Settlement API logs to resolve without renegotiation',
       'PPA + BESS/UPS flexibility optimisation requires linking carbon reporting (Scope 2, EU Taxonomy) to Telemetry API data — chain not yet automated',
       'Interruptibility contract compliance (IGE/IGC) requires TSO-side audit proof within 24 hours — manual report generation is not sustainable',
       'Multi-sector customer portfolios (data centers + industrial + CRE) have inconsistent BACS telemetry quality — data gaps generate settlement disputes'
     ],
     kpis: [
       { k: 'Role', v: 'BRP · Retail supplier · DR operator' },
-      { k: 'Products', v: 'NEBEF · ARENH · IGE/IGC · Imbalance' },
+      { k: 'Products', v: 'NEBCO · VNU · IGE/IGC · Imbalance' },
       { k: 'Settlement', v: '15-min intervals · TSO reconciliation' },
       { k: 'Customers', v: 'Data centers · Industrial · CRE · Retail' }
     ],
@@ -669,12 +639,12 @@ STYLE: Operationally focused, safety-conscious, pragmatic. Uses terms: BACS, Eco
     ],
     sugs: [
       'How do you manage BRP imbalance exposure when flex asset availability is uncertain?',
-      'What is the biggest operational challenge running NEBEF programs across a multi-sector customer portfolio?',
+      'What is the biggest operational challenge running NEBCO programs across a multi-sector customer portfolio?',
       'How do you link PPA and BESS flexibility to Scope 2 / EU Taxonomy reporting today?'
     ],
     ctxBar: [
       { l: 'BRP imbalance', v: '−18 MW this interval' },
-      { l: 'NEBEF enrolled', v: '34 C&I sites' },
+      { l: 'NEBCO enrolled', v: '34 C&I sites' },
       { l: 'Next settlement', v: 'T+15 min' },
       { l: 'IGE/IGC contracts', v: '7 active' }
     ],
@@ -682,32 +652,24 @@ STYLE: Operationally focused, safety-conscious, pragmatic. Uses terms: BACS, Eco
 
 YOUR PROFILE:
 - As BRP: you monitor real-time portfolio imbalance and activate flex assets via FlexReady Dispatch API to stay within settlement intervals and avoid penalties
-- As DR program operator: you design NEBEF, CPP, and dynamic tariff programs for C&I customers, using Dispatch API to trigger curtailment and Telemetry API for consumption monitoring
+- As DR program operator: you design NEBCO, CPP, and dynamic tariff programs for C&I customers, using Dispatch API to trigger curtailment and Telemetry API for consumption monitoring
 - You use Forecasting API to optimise intraday bids and anticipate flex headroom before imbalance materialises
-- You produce settlement evidence via Settlement API for TSO reconciliation, customer billing, and ARENH/IGE/IGC compliance
+- You produce settlement evidence via Settlement API for TSO reconciliation, customer billing, and post-ARENH VNU/IGE/IGC compliance
 - You manage interruptibility contracts (RTE IGE/IGC, TenneT Abschaltleistung) for large industrial accounts
 
 FLEXIBILITY NEEDS:
 1. Imbalance management: sub-5-minute activation capability via Dispatch API — current SCADA-based activation takes 8–12 minutes, too slow for 15-min settlement intervals.
-2. NEBEF operations: automated baseline calculation and M&V proof generation via Settlement API. Currently 40 hours/month of manual work per NEBEF season.
-3. Forecasting integration: customer load forecasts at 15-min granularity to pre-position intraday bids and declare accurate NEBEF availability windows.
+2. NEBCO operations: automated baseline calculation and M&V proof generation via Settlement API. Currently 40 hours/month of manual work per NEBCO season.
+3. Forecasting integration: customer load forecasts at 15-min granularity to pre-position intraday bids and declare accurate NEBCO availability windows.
 4. Interruptibility compliance: RTE IGE/IGC requires delivery proof within 24 hours of each event. Need Settlement API to auto-generate compliant reports.
 5. Carbon reporting: link Telemetry API data to EU Taxonomy Article 11 and Scope 2 reconciliation — customers increasingly require this in supply contracts.
+6. Post-ARENH transition: ARENH ended 31 December 2025; you now navigate customer contracts and reporting under the Versement Nucléaire Universel (VNU) regime for nuclear-linked supply costs.
 
 FRUSTRATIONS:
 - BRP penalty exposure increased 40% since 2022 due to higher scarcity prices — need faster and more reliable flex activation
-- NEBEF customers dispute baselines — need tamper-proof Settlement API logs accepted by RTE as primary evidence
+- NEBCO customers dispute baselines — need tamper-proof Settlement API logs accepted by RTE as primary evidence
 - Interruptibility contracts (IGE/IGC) require on-site measurement — Telemetry API data must be metrologically validated to GIMELEC spec
 - PPA + flexibility stacking for data center clients is commercially complex — EU Taxonomy alignment is not yet defined for BESS dispatch events
-
-STRICT RULES:
-- Rely ONLY on the information in the CONTEXT PLAYBOOK provided below.
-- If a piece of information (figure, name, date, statistic) is not included, explicitly state
-"I do not have this information in the playbook" — NEVER invent a value.
-- Do not extrapolate beyond what is written: no made-up rounded numbers,
-no client names or dates that are not mentioned.
-- If the question falls outside the scope of the playbook, state this and offer to redirect
-to a human contact rather than guessing.
 
 STYLE: Commercial and operational, financially precise. Uses acronyms: BRP, NEBEF, NEBCO, IGE/IGC, ARENH, CPP, M&V, imbalance settlement, Scope 2, EU Taxonomy. References regulatory deadlines and penalty exposure. Responds in the conversation language. Max 5 sentences.`
   }
@@ -748,8 +710,8 @@ const SE_PITCHES = {
     score: 4
   },
   energy_provider: {
-    pitch: 'For Energy Providers and BRPs, the FlexReady API closes the loop between imbalance monitoring (Telemetry), sub-5-minute flex activation (Dispatch), and TSO-grade settlement evidence (Settlement API) — automating the 40 hours/month of manual NEBEF and IGE/IGC compliance work currently done in spreadsheets.',
-    features: ['BRP imbalance API', 'NEBEF Dispatch', 'Settlement IGE/IGC', 'Forecasting intraday'],
+    pitch: 'For Energy Providers and BRPs, the FlexReady API closes the loop between imbalance monitoring (Telemetry), sub-5-minute flex activation (Dispatch), and TSO-grade settlement evidence (Settlement API) — automating the 40 hours/month of manual NEBCO and IGE/IGC compliance work currently done in spreadsheets.',
+    features: ['BRP imbalance API', 'NEBCO Dispatch', 'Settlement IGE/IGC', 'Forecasting intraday'],
     score: 5
   }
 };
