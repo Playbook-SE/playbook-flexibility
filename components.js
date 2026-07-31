@@ -19,7 +19,7 @@
 (function () {
   // ── VERSION EXTERNE (playbook-se.github.io) ──────────────────────────────
   // All nav links point to the internal SE GitHub Pages site.
-  var BASE = 'https://pages.github.schneider-electric.com/SESA565856/flexibility-playbook/';
+  var BASE = 'https://pages.github.schneider-electric.com/Playbook-EcoOS-Openness/flexibility-playbook/';
   // ─────────────────────────────────────────────────────────────────────────
   // Brand + footer SVG logos (official Schneider Electric marks)
   var BRAND_LOGO = `<svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 218 64">
